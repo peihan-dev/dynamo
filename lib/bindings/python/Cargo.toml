@@ -60,7 +60,7 @@ request-trace-s3 = ["dynamo-llm/request-trace-s3"]
 aisimulate-core = { version = "=0.1.0-dev.2", optional = true, features = ["python"] }
 dynamo-runtime = { path = "../../runtime" }
 dynamo-mocker = { path = "../../mocker" }
-dynamo-parsers = { git = "https://github.com/ai-dynamo/frontend-crates.git", rev = "abf7fdf2be684be25d85eb4a8689ab411caa837e", version = "=8.2.0" }
+dynamo-parsers = { version = "=8.2.0-muse-spark-open-dev.1" }
 dynamo-backend-common = { path = "../../backend-common" }
 dynamo-sidecar-common = { path = "../../sidecar/common" }
 dynamo-sglang-sidecar = { path = "../../sidecar/sglang" }
@@ -129,10 +129,6 @@ dynamo-llm = { path = "../../llm", default-features = false }
 [dev-dependencies]
 opentelemetry_sdk = { version = "0.31.0", features = ["trace"] }
 tracing-subscriber = { version = "0.3", features = ["registry"] }
-
-# This excluded workspace must mirror the root's release protocol override.
-[patch."https://github.com/ai-dynamo/frontend-crates.git"]
-dynamo-protocols = { version = "=6.0.0-muse-spark-open-dev.1" }
 
 [profile.profiling]
 inherits = "release"

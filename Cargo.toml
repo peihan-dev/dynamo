@@ -69,8 +69,7 @@ dynamo-memory = { path = "lib/memory", version = "1.5.0" }
 dynamo-mocker = { path = "lib/mocker", version = "1.5.0" }
 dynamo-kv-router = { path = "lib/kv-router", version = "1.5.0" }
 dynamo-protocols = { version = "=6.0.0-muse-spark-open-dev.1" }
-# The published legacy parser still depends on protocols 5.x. Use its release source.
-dynamo-parsers = { git = "https://github.com/ai-dynamo/frontend-crates.git", rev = "abf7fdf2be684be25d85eb4a8689ab411caa837e", version = "=8.2.0" }
+dynamo-parsers = { version = "=8.2.0-muse-spark-open-dev.1" }
 
 # Published on crates.io. To see all available versions:
 #   web:          https://crates.io/crates/dynamo-parsers-v2/versions
@@ -195,10 +194,6 @@ rcgen = { version = "0.13" }
 tokio-rustls = { version = "0.26" }
 rustls = { version = "0.23", default-features = false, features = ["ring", "std"] }
 rustls-pemfile = { version = "2" }
-
-# Share the published protocol types with the legacy parser's Git dependency.
-[patch."https://github.com/ai-dynamo/frontend-crates.git"]
-dynamo-protocols = { version = "=6.0.0-muse-spark-open-dev.1" }
 
 [profile.dev.package]
 insta.opt-level = 3
